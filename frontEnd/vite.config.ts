@@ -57,6 +57,7 @@ export default defineConfig({
       extendRoute (route) {
         // 如果是默认路由，加一个 redirect 重定向到首页
         // 这里建议 console.log(route) 查看路由信息 在做调试
+        // 如果这里配置 需要在页面文件夹 新建 [...all].tsx 文件才能匹配到
         if (route.path === '/:all(.*)*') {
           return {
             ...route

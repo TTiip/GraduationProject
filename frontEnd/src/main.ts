@@ -16,6 +16,17 @@ const router = createRouter({
   routes
 })
 
+// 这里也可以配置 路由导航
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.length === 0) {
+//     // 如果未匹配到路由
+//     from.name ? next({ name: from.name }) : next('/')
+//   } else {
+//     // 如果匹配到正确跳转
+//     next()
+//   }
+// })
+
 app.use(router)
 
 // 可加上 options { eager: true } 直接引入所有的模块
