@@ -8,12 +8,19 @@ pnpm-debug.log*
 lerna-debug.log*
 pnpm-debug.log*
 
+package-lock.json*
+pnpm-lock.yaml*
+
+auto-imports.d.ts*
+components.d.ts*
+
 node_modules
 dist
 dist-ssr
 *.local
 
 # Editor directories and files
+.vite/*
 .vscode/*
 !.vscode/extensions.json
 .idea

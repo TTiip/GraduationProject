@@ -6,8 +6,8 @@ export const router = createRouter({
   history: routerHistory,
   routes: [
     { path: '/', redirect: '/home' },
+    { path: '/logo', component: () => import('~/views/Logo/index.vue') },
     { path: '/home', component: () => import('~/components/HelloWorld.vue') },
-    { path: '/home1', component: () => import('~/components/HelloWorld1.vue') },
   ],
 })
 

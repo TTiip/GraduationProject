@@ -6,7 +6,11 @@ import UnoCSS from 'unocss/vite'
 import {
   presetAttributify,
   presetUno,
+  presetIcons,
 } from 'unocss'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 const _resolve = (dir: string) => {
   return path.resolve(__dirname, dir)
@@ -15,9 +19,15 @@ const _resolve = (dir: string) => {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
     vue(),
     UnoCSS({
-      mode: 'vue-scoped',
+      mode: 'global',
       // 自定义类名
       rules: [
         ['bg-box', { background: '#ff6700' }],
@@ -31,7 +41,11 @@ export default defineConfig({
       ],
       presets: [
         presetUno(),
-        presetAttributify()
+        presetAttributify(),
+        presetIcons({
+          scale: 1.2,
+          warn: true
+        }),
       ]
     }),
   ],
