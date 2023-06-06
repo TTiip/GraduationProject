@@ -33,8 +33,8 @@ export default defineComponent({
           width="auto"
           v-slots={{
             reference: () => (
-              <button
-                class="btn text-18px dark:i-iconoir-half-moon i-iconoir:sun-light"
+              <i
+                class="flex text-18px dark:i-iconoir-half-moon i-iconoir:sun-light"
                 onClick={ () => toggleDark() } />
             )
           }}
