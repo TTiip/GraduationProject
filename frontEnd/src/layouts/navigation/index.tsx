@@ -1,5 +1,5 @@
 import { TransitionGroup, withModifiers } from 'vue'
-import { ElBreadcrumb, ElBreadcrumbItem } from 'element-plus'
+import { ElBreadcrumb, ElBreadcrumbItem, ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus'
 import ChooseTheme from '~/layouts/navigation/choose-theme'
 
 import './index.css'
@@ -8,13 +8,11 @@ export default defineComponent({
   name: 'navigation',
   props: ['isCollapse'],
   setup (props, { emit }) {
-    // const user: any = {}
+    const user: any = {}
     const tagsViewInstance = getTagsViewInstance()
 
     // 使用 useVModel 处理 props 偷个懒搞成双向绑定。
     const isCollapse = useVModel(props, 'isCollapse', emit)
-
-    // const showMenu = ref(false)
 
     const route = useRoute()
     const router = useRouter()
@@ -43,27 +41,29 @@ export default defineComponent({
           <ChooseTheme />
           <button class={`btn text-18px ${isFullscreen.value ? 'i-iconoir:collapse' : 'i-iconoir:expand'}`} onClick={ toggleFullscreen } />
 
-          {/* <el-dropdown v-slots={{
-          dropdown: () => (
-            <>
-              <el-dropdown-item class="mt-1.5!" onClick={ router.push('/') }>
-      				控制台
-              </el-dropdown-item>
-              <el-dropdown-item onClick={ showMenu.value = true }>
-      				个人设置
-              </el-dropdown-item>
-              <el-dropdown-item divided class="mt-1.5!" onClick={ user.logout() }>
-      				退出登陆
-              </el-dropdown-item>
-            </>
-          )
-        }}>
-          <div class="flex items-center gap-1 cursor-pointer">
-            <i class="i-fa6-solid:circle-user text-xl text-gray-300 mx-1" />
-            { user.userInfo.name }
-            <i i-fa-solid:sort-down self-start />
-          </div>
-        </el-dropdown> */}
+          <ElDropdown
+            v-slots={{
+              dropdown: () => (
+                <>
+                  <ElDropdownMenu>
+                    <ElDropdownItem class="mt-1.5!" onClick={ () => router.push('/') }>
+                      控制台
+                    </ElDropdownItem>
+                    <ElDropdownItem divided class="mt-1.5!" onClick={ () => user.logout() }>
+                      退出登陆
+                    </ElDropdownItem>
+                  </ElDropdownMenu>
+                </>
+              )
+            }}
+          >
+            112233
+            {/* <div class="flex items-center gap-1 cursor-pointer">
+              <i class="i-fa6-solid:circle-user text-xl text-gray-300 mx-1" />
+              { user.userInfo.name }
+              <i i-fa-solid:sort-down self-start />
+            </div> */}
+          </ElDropdown>
         </nav>
       )
     }

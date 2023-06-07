@@ -154,7 +154,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://mock.apifox.cn/m1/1643115-0-default',
+        target: 'http://localhost:3000/',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '')
       }
