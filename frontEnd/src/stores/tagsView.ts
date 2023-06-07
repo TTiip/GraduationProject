@@ -30,7 +30,7 @@ const useTagsViewStore = defineStore('tagsView', () => {
     if (index < 0) {
       visitedViews.value.push(route)
     } else {
-      visitedViews[index] = route
+      visitedViews.value[index] = route
     }
   }
 

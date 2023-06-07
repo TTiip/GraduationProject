@@ -91,10 +91,13 @@ export default defineComponent({
           onEnd (evt: SortableEvent) {
             // 拖拽以后改变 strore 🍍 中的数据，出发 $subscribe 方法持久化存储。
             if (evt.oldIndex !== evt.newIndex) {
-              let arr = JSON.parse(JSON.stringify(tagsViewInstance.visitedViews))
+              // 这里不用拷贝一份出来，原因不明
+              let arr = tagsViewInstance.visitedViews
               const currRow = arr.splice(evt.oldIndex, 1)[0]
               arr.splice(evt.newIndex, 0, currRow)
-              tagsViewInstance.visitedViews = arr
+              // console.log(tagsViewInstance.visitedViews, 'tagsViewInstance.visitedViews')
+              // console.log(arr, 'arr')
+              // tagsViewInstance.visitedViews = arr
             }
           }
         })

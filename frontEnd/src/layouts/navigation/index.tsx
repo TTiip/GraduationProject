@@ -19,7 +19,7 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
     // 过滤出 meta 中含有 title 的数据
-    const list = computed(() => router.resolve(route).matched.filter(i => i?.meta.title))
+    const list = computed(() => router.resolve(route)?.matched.filter(i => i?.meta.title))
     // const list: any = []
     return () => {
       return (
