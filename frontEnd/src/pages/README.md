@@ -48,3 +48,15 @@ export default defineComponent({
   }
 })
 ```
+```
+注意点！！！
+
+路由元只能写在动态生成的路由的page中，写在page组件中不生效！！！
+
+例如
+├── article-manage
+│   ├── index.tsx (这里写没用！)
+│─── article-manage.tsx (这里写！！！)
+
+
+```
