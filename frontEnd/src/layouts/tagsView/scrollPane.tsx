@@ -24,7 +24,7 @@ export default defineComponent({
     const moveToTarget = (currentTag: RouteLocation) => {
       const $container = scrollContainer.value.$el
       const $containerWidth = $container.offsetWidth
-      const $scrollWrapper = scrollWrapper.value
+      const $scrollWrapper = scrollWrapper.value || {}
 
       let firstTag = null
       let lastTag = null
