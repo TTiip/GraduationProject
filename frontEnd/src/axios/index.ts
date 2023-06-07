@@ -101,7 +101,7 @@ instance.interceptors.response.use(response => {
   if (!sucesss) {
     ElMessage({
       type: 'error',
-      message: response.data.message,
+      message: response.data.message || '出了一点小差错，稍后再试吧～',
       showClose: true,
       grouping: true
     })
