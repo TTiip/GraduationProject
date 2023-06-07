@@ -79,19 +79,19 @@ export default defineConfig({
       //   return route
       // },
       // 整体处理整个routes的信息，然后进行相应的处理
-      onRoutesGenerated (routes) {
-        console.log(routes, 'routes')
-        const temp_routes = JSON.parse(JSON.stringify(routes))
-        temp_routes.forEach((item: any) => {
-          // 这里依然是判断一下路由中包含了fruit字符串的，更换layout
-          if (item.path.includes('fruit')) {
-            item.meta = {
-              layout: 'home'
-            }
-          }
-        })
-        return temp_routes
-      },
+      // onRoutesGenerated (routes) {
+      //   console.log(routes, 'routes')
+      //   const temp_routes = JSON.parse(JSON.stringify(routes))
+      //   temp_routes.forEach((item: any) => {
+      //     // 这里依然是判断一下路由中包含了fruit字符串的，更换layout
+      //     if (item.path.includes('fruit')) {
+      //       item.meta = {
+      //         layout: 'home'
+      //       }
+      //     }
+      //   })
+      //   return temp_routes
+      // },
       // 这里涉及到更改客户端代码
       // onClientGenerated(clientCode) {
       //   // 能够完整获取到我们实际生成的路由的完整代码，string格式的，
