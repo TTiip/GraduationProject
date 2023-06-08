@@ -94,7 +94,6 @@ error => {
 
 // 添加响应拦截器
 instance.interceptors.response.use(response => {
-  console.log(response, 'response')
   removePending(response.config)
 
   const sucesss = response.data.sucesss

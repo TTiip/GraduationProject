@@ -38,7 +38,6 @@ export const useUserStore = defineStore('user', () => {
 
   async function getUserInfo () {
     if (!userInfo.value) {
-      console.log(112233)
       const res = await axios({
         url: 'getUserInfo',
         method: 'POST',

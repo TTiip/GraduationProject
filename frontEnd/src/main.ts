@@ -10,7 +10,7 @@ import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import './styles/dark-css-vars.css'
 
-console.log(routes, 'routes')
+// console.log(routes, 'routes')
 
 const app = createApp(App)
 const router = createRouter({
