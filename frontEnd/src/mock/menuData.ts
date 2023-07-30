@@ -7,48 +7,40 @@ const data: MenuItemType[] = [
     icon: 'i-iconoir:home',
     children: []
   },
-  // {
-  //   path: '/1',
-  //   name: '路由嵌套',
-  //   icon: 'i-iconoir:align-right',
-  //   children: [
-  //     {
-  //       path: '1 - 1',
-  //       name: '1 - 1',
-  //       icon: '',
-  //       children: [
-  //         {
-  //           path: '1 - 1 - 1',
-  //           name: '1 - 1 - 1',
-  //           icon: '',
-  //           children: [
-  //             {
-  //               path: '1 - 1 - 1 - 1',
-  //               name: '1 - 1 - 1 - 1',
-  //               icon: '',
-  //               children: [
-  //                 {
-  //                   path: '1 - 1 - 1 - 1 - 2',
-  //                   name: '1 - 1 - 1 - 1 - 2',
-  //                   icon: '',
-  //                   children: []
-  //                 }]
-  //             }
-  //           ]
-  //         }
-  //       ]
-  //     }
-  //   ]
-  // },
   {
     path: '/article-manage',
-    name: '文章管理',
+    name: '商品',
     icon: 'i-iconoir:google-docs',
-    children: []
+    children: [
+      {
+        path: '/department',
+        name: '商品列表',
+        icon: '',
+        children: []
+      },
+      {
+        path: '/department',
+        name: '添加商品',
+        icon: '',
+        children: []
+      },
+      {
+        path: '/department',
+        name: '商品分类',
+        icon: '',
+        children: []
+      },
+      {
+        path: '/department',
+        name: '商品类型',
+        icon: '',
+        children: []
+      }
+    ]
   },
   {
     path: '/3',
-    name: '组织架构',
+    name: '订单',
     icon: 'i-iconoir:network-right',
     children: [
       {
@@ -61,7 +53,7 @@ const data: MenuItemType[] = [
   },
   {
     path: '/4',
-    name: '数据字典',
+    name: '营销',
     icon: 'i-iconoir:bookmark-book',
     children: [
       {
@@ -80,24 +72,30 @@ const data: MenuItemType[] = [
   },
   {
     path: '/5',
-    name: '系统管理',
+    name: '权限',
     icon: 'i-iconoir:settings',
     children: [
       {
         path: '/system-setting',
-        name: '系统设置',
+        name: '用户列表',
         icon: '',
         children: []
       },
       {
         path: '/user-manage',
-        name: '用户管理',
+        name: '角色列表',
         icon: '',
         children: []
       },
       {
         path: '/role-permission',
-        name: '角色权限',
+        name: '菜单列表',
+        icon: '',
+        children: []
+      },
+      {
+        path: '/role-permission',
+        name: '资源列表',
         icon: '',
         children: []
       }

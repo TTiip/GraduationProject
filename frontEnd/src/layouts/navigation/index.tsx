@@ -40,7 +40,6 @@ export default defineComponent({
 
           <ChooseTheme />
           <button class={`btn text-18px ${isFullscreen.value ? 'i-iconoir:collapse' : 'i-iconoir:expand'}`} onClick={ toggleFullscreen } />
-
           <ElDropdown
             v-slots={{
               dropdown: () => (
@@ -57,7 +56,7 @@ export default defineComponent({
               )
             }}
           >
-            112233
+            欢迎您, admin
             {/* <div class="flex items-center gap-1 cursor-pointer">
               <i class="i-fa6-solid:circle-user text-xl text-gray-300 mx-1" />
               { user.userInfo.name }

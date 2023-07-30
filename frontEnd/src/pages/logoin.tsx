@@ -44,11 +44,11 @@ export default defineComponent({
             <div class="flex items-center gap-3">
               <img src="../../public/logo.png" class="h-15 select-none" />
               <div>
-                <div class="tracking-widest whitespace-nowrap font-extrabold text-4xl text-gray-700 dark:text-gray-100">
-									后台管理系统
+                <div class="tracking-widest whitespace-nowrap font-extrabold text-[30px] text-gray-700 dark:text-gray-100">
+                  微众银行闲置交易管理系统
                 </div>
                 <p class="text-sm tex-gray-400">
-									Vitesse Background Management System
+                  Webank idle transaction management system
                 </p>
               </div>
             </div>
@@ -74,7 +74,10 @@ export default defineComponent({
                 }}
               />
             </ElFormItem>
-            <ElButton class="bg-primary z-1" type="primary" native-type="submit">登录</ElButton>
+            <div class="flex justify-center">
+              <ElButton class="bg-primary z-1" type="primary" native-type="submit">登录</ElButton>
+              <ElButton class="bg-primary z-1" type="primary" native-type="submit">注册</ElButton>
+            </div>
           </ElForm>
         </div>
       )

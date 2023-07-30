@@ -20,7 +20,7 @@ export default defineComponent({
             <img class="w-8 mx-1" src="../../public/logo.png" />
             <div class="relative overflow-hidden">
               <Transition enter-active-class="absolute" duration={ 300 } leave-active-class="absolute">
-                <h1 v-show={ !isCollapse.value } class="ml-1 text-primary center text-gray-700 dark:text-gray-200">name~</h1>
+                <h1 v-show={ !isCollapse.value } class="ml-1 text-primary center text-gray-700 dark:text-gray-200">微众银行闲置交易管理系统</h1>
               </Transition>
             </div>
           </header>

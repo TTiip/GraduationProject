@@ -4,5 +4,5 @@
 }
 
 .el-menu:not(.el-menu--collapse) {
-  width: 240px;
+  /* width: 240px; */
 }
