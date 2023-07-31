@@ -1,13 +1,13 @@
 export default defineComponent({
-  name: 'global-code',
+  name: 'index',
   setup () {
     return (
       <route lang="yaml">
-        redirect: /global-code
+        redirect: /
         component: ~/layouts
         meta:
-          title: 数据字典
-        showId: true
+          title: 资源列表
+          showId: true
       </route>
     )
   }

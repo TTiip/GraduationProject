@@ -1,12 +1,12 @@
 export default defineComponent({
-  name: 'code-group',
+  name: 'index',
   setup () {
     return (
       <route lang="yaml">
-        redirect: /code-group
+        redirect: /
         component: ~/layouts
         meta:
-          title: 数据字典
+          title: 添加商品
           showId: true
       </route>
     )

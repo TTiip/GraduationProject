@@ -1,14 +1,13 @@
 export default defineComponent({
-  name: 'department',
+  name: 'index',
   setup () {
     return (
       <route lang="yaml">
-        redirect: /department
+        redirect: /
         component: ~/layouts
         meta:
-          title: 组织架构
-          hidden: false
-          permission: true
+          title: 用户列表
+          showId: true
       </route>
     )
   }

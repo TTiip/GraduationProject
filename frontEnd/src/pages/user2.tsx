@@ -6,7 +6,7 @@ export default defineComponent({
         redirect: /
         component: ~/layouts
         meta:
-          title: 仪表盘
+          title: 解说列表
           showId: true
       </route>
     )

@@ -3,35 +3,35 @@ import type { MenuItemType } from '~/types'
 const data: MenuItemType[] = [
   {
     path: '/',
-    name: '首页',
+    name: '仪表盘',
     icon: 'i-iconoir:home',
     children: []
   },
   {
-    path: '/article-manage',
+    path: '/goods',
     name: '商品',
     icon: 'i-iconoir:google-docs',
     children: [
       {
-        path: '/department',
+        path: '/goods1',
         name: '商品列表',
         icon: '',
         children: []
       },
       {
-        path: '/department',
+        path: '/goods2',
         name: '添加商品',
         icon: '',
         children: []
       },
       {
-        path: '/department',
+        path: '/goods3',
         name: '商品分类',
         icon: '',
         children: []
       },
       {
-        path: '/department',
+        path: '/goods4',
         name: '商品类型',
         icon: '',
         children: []
@@ -39,62 +39,49 @@ const data: MenuItemType[] = [
     ]
   },
   {
-    path: '/3',
+    path: '/order',
     name: '订单',
     icon: 'i-iconoir:network-right',
     children: [
       {
-        path: '/department',
-        name: '部门管理',
-        icon: '',
-        children: []
-      }
-    ]
-  },
-  {
-    path: '/4',
-    name: '营销',
-    icon: 'i-iconoir:bookmark-book',
-    children: [
-      {
-        path: '/code-group',
-        name: '代码组',
+        path: '/order1',
+        name: '订单列表',
         icon: '',
         children: []
       },
       {
-        path: '/global-code',
-        name: '全局代码',
+        path: '/order2',
+        name: '订单设置',
         icon: '',
         children: []
       }
     ]
   },
   {
-    path: '/5',
+    path: '/user',
     name: '权限',
     icon: 'i-iconoir:settings',
     children: [
       {
-        path: '/system-setting',
+        path: '/user1',
         name: '用户列表',
         icon: '',
         children: []
       },
       {
-        path: '/user-manage',
+        path: '/user2',
         name: '角色列表',
         icon: '',
         children: []
       },
       {
-        path: '/role-permission',
+        path: '/user3',
         name: '菜单列表',
         icon: '',
         children: []
       },
       {
-        path: '/role-permission',
+        path: '/user4',
         name: '资源列表',
         icon: '',
         children: []

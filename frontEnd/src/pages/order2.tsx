@@ -3,10 +3,10 @@ export default defineComponent({
   setup () {
     return (
       <route lang="yaml">
-        redirect: /system-setting
+        redirect: /
         component: ~/layouts
         meta:
-          title: 系统管理
+          title: 订单设置
           showId: true
       </route>
     )

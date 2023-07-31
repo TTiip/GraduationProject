@@ -1,12 +1,12 @@
 export default defineComponent({
-  name: 'article-manage',
+  name: 'index',
   setup () {
     return (
       <route lang="yaml">
-        redirect: /article-manage
+        redirect: /
         component: ~/layouts
         meta:
-          title: 文章管理
+          title: 订单列表
           showId: true
       </route>
     )

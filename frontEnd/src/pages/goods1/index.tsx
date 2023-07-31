@@ -1,14 +1,14 @@
 export default defineComponent({
-  name: 'global-code',
+  name: 'index',
   setup () {
-    const num = ref(0)
+    const num = ref<number>(0)
     function addNum () {
       num.value += 1
     }
     return () => (
       <div>
         <h1 onClick={ addNum }>
-          GlobalCode: { num.value }
+          Index - { num.value }
         </h1>
       </div>
     )
