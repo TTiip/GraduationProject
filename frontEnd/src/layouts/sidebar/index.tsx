@@ -29,7 +29,7 @@ export default defineComponent({
             title: () => (
               <>
                 <ElIcon>
-                  <i class={`${item.icon} text-18px`}/>
+                  <i class={`${item.icon}`}/>
                 </ElIcon>
                 <span>{item.name}</span>
               </>

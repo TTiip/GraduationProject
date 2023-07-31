@@ -57,11 +57,6 @@ export default defineComponent({
             }}
           >
             欢迎您, admin
-            {/* <div class="flex items-center gap-1 cursor-pointer">
-              <i class="i-fa6-solid:circle-user text-xl text-gray-300 mx-1" />
-              { user.userInfo.name }
-              <i i-fa-solid:sort-down self-start />
-            </div> */}
           </ElDropdown>
         </nav>
       )
