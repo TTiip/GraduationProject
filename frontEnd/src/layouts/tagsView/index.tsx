@@ -12,9 +12,9 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
     const tagsViewInstance = getTagsViewInstance()
-    const userInstance = getUserInstance()
+    // const userInstance = getUserInstance()
 
-    userInstance.getUserInfo()
+    // userInstance.getUserInfo()
 
     const tags = shallowRef<{ to: RouteLocation }[]>([])
     const scrollPaneRef = shallowRef<any>()
