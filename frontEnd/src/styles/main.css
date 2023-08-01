@@ -11,7 +11,7 @@ body,
   padding: 0!important;
 }
 
-.el-scrollbar__view {
+/* .el-scrollbar__view {
   display: flex;
 }
 
@@ -26,4 +26,4 @@ body,
 
 .el-scrollbar__view {
   padding-top: 6px;
-}
+} */

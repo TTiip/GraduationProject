@@ -1,6 +1,8 @@
 module.exports = {
   extends: ['@antfu'],
   rules: {
+    // 关闭tab和空格混用 eslint 校验
+    'no-mixed-spaces-and-tabs': 'off',
     // 强制组件名使用 index-component 这种，兼容缓存逻辑(为了偷懒～)
     'vue/component-definition-name-casing': [2, 'kebab-case'],
     // 关闭函数一定要写返回值
