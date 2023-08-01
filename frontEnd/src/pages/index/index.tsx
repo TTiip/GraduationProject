@@ -84,14 +84,14 @@ export default defineComponent({
       {
         id: 3,
         name: '本月销售总额',
-        count: 18672,
+        count: 472,
         compareLabel: '同比上月',
         compare: 7
       },
       {
         id: 4,
         name: '本周销售总额',
-        count: 672,
+        count: 297,
         compareLabel: '同比上周',
         compare: -19
       }

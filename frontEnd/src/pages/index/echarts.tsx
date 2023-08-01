@@ -109,7 +109,6 @@ export default defineComponent({
         {
           name: '本月订单数',
           type: 'line',
-          stack: 'Total',
           data: [120, 132, 101, 134, 90, 230, 210],
           label: {
             color: '#909399'
@@ -118,7 +117,6 @@ export default defineComponent({
         {
           name: '本周订单数',
           type: 'line',
-          stack: 'Total',
           data: [220, 182, 191, 234, 290, 330, 310],
           label: {
             color: '#909399'
@@ -127,7 +125,6 @@ export default defineComponent({
         {
           name: '本月销售总额',
           type: 'line',
-          stack: 'Total',
           data: [150, 232, 201, 154, 190, 330, 410],
           label: {
             color: '#909399'
@@ -136,7 +133,6 @@ export default defineComponent({
         {
           name: '本周销售总额',
           type: 'line',
-          stack: 'Total',
           data: [320, 332, 301, 334, 390, 330, 320],
           label: {
             color: '#909399'
