@@ -1,5 +1,5 @@
 import { ElCard } from 'element-plus'
-import EchartsComponent from '~/pages/index/echarts'
+import EchartsComponent from '~/components/echarts'
 
 export default defineComponent({
   name: 'index',
