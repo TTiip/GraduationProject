@@ -1,4 +1,5 @@
 import { ElCard } from 'element-plus'
+import EchartsComponent from '~/pages/index/echarts'
 
 export default defineComponent({
   name: 'index',
@@ -140,9 +141,24 @@ export default defineComponent({
                 <div>订单统计</div>
               ),
               default: () => (
-                <div>
-                  <div>
-
+                <div class="flex">
+                  <div class="min-w-180px">
+                    {
+                      tabsList2.map(item => (
+                        <div key={item.id} class="mb-6px">
+                          <div class="color-#909399">{ item.name }</div>
+                          <div class="color-#606266 py-10px text-24px">{ item.count }</div>
+                          <div>
+                            <span class={ item.compare <= 0 ? 'color-red' : 'color-green' }>{ item.compare }%</span>
+                            <span class="ml-4px">{ item.compareLabel }</span>
+                          </div>
+                          <div></div>
+                        </div>
+                      ))
+                    }
+                  </div>
+                  <div class="border-l border-l-#dcdfe6 border-l-1px py-4px px-10px w-100%">
+                    <EchartsComponent />
                   </div>
                 </div>
               )
