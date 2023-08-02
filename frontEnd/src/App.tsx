@@ -1,4 +1,5 @@
 import { ElConfigProvider } from 'element-plus'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 export default defineComponent({
   name: 'app-component',
@@ -10,7 +11,8 @@ export default defineComponent({
       },
       button: {
         autoInsertSpace: true
-      }
+      },
+      locale: zhCn
     }
 
     return () => (

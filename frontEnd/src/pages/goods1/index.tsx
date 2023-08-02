@@ -1,6 +1,7 @@
 import { ElCard, ElIcon } from 'element-plus'
 import Form from '~/components/from'
 import Table from '~/components/table'
+import { columnList, data } from '~/pages/goods1/data'
 import { type typeFormItem } from '~/types/form'
 
 export default defineComponent({
@@ -80,7 +81,10 @@ export default defineComponent({
             <span class="ml-4px">数据列表</span>
           </div>
         </ElCard>
-        <Table />
+        <Table
+          data={data}
+          columnList={columnList}
+        />
       </div>
     )
   }
