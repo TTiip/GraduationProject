@@ -1,4 +1,6 @@
+import { ElCard, ElIcon } from 'element-plus'
 import Form from '~/components/from'
+import Table from '~/components/table'
 import { type typeFormItem } from '~/types/form'
 
 export default defineComponent({
@@ -65,11 +67,20 @@ export default defineComponent({
       }
     ]
     return () => (
-      <div>
+      <div class="p-16px">
         <Form
           model={model}
           fromItemConfig={fromItemConfig}
         />
+        <ElCard>
+          <div class="flex items-center">
+            <ElIcon style="font-size: 24px">
+              <i class="i-iconoir-task-list"></i>
+            </ElIcon>
+            <span class="ml-4px">数据列表</span>
+          </div>
+        </ElCard>
+        <Table />
       </div>
     )
   }
