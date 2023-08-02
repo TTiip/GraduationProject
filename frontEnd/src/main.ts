@@ -6,6 +6,11 @@ import routes from '~pages'
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
+// 预加载icon 并且使用icon的时候需要以下步骤之一
+// 1.将标签设置为块级标
+// 2.父级标签设置flex
+// 3.自身标签设置flex
+import './unocss-icon'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import './styles/dark-css-vars.css'
