@@ -11,6 +11,16 @@ body,
   padding: 0!important;
 }
 
+.el-form-item {
+  min-width: 300px;
+  margin-right: 20px!important;
+}
+
+.el-input,
+.el-select {
+  width: 100%;
+}
+
 /* .el-scrollbar__view {
   display: flex;
 }
