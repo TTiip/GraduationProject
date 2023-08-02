@@ -22,9 +22,9 @@ export default defineComponent({
       console.log('submit!')
     }
     const renderElFormItem = (item: typeFormItem<keyof typeof model>) => {
-		  switch (item.type) {
-		    case ItemTypeEnum.Input:
-		      return (
+      switch (item.type) {
+        case ItemTypeEnum.Input:
+          return (
             <ElInput v-model={model[item.key]} {...item.attrs} />
           )
         case ItemTypeEnum.Select:
@@ -44,28 +44,28 @@ export default defineComponent({
               }
             </ElSelect>
           )
-		    default:
-		      return '默认位置'
-		  }
+        default:
+          return '默认位置'
+      }
     }
     return () => (
-		  <div>
-		    <ElForm inline={true} model={model} scroll-into-view-options={true}>
-		      {
-		        fromItemConfig.map((item: typeFormItem<keyof typeof model>) => (
-		          <ElFormItem label={item.label} key={item.key}>
-		            {
-		              renderElFormItem(item)
-		            }
-		          </ElFormItem>
-		        ))
-		      }
+      <div>
+        <ElForm inline={true} model={model} scroll-into-view-options={true}>
+          {
+            fromItemConfig.map((item: typeFormItem<keyof typeof model>) => (
+              <ElFormItem label={item.label} key={item.key}>
+                {
+                  renderElFormItem(item)
+                }
+              </ElFormItem>
+            ))
+          }
           <ElFormItem>
             <ElButton onClick={ () => onSubmit() }>重置</ElButton>
             <ElButton type="primary" onClick={ () => onSubmit() }>查询</ElButton>
           </ElFormItem>
-		    </ElForm>
-		  </div>
+        </ElForm>
+      </div>
     )
   }
 })
