@@ -1,4 +1,5 @@
 import { ElButton, ElForm, ElFormItem, ElInput, ElOption, ElSelect } from 'element-plus'
+import type { FormInstance } from 'element-plus'
 import { ItemTypeEnum, type typeFormItem } from '~/types/form'
 
 export default defineComponent({
@@ -11,16 +12,42 @@ export default defineComponent({
     fromItemConfig: {
       type: Object,
       required: true
+    },
+    inline: {
+      type: Boolean,
+      default: true
+    },
+    rules: {
+      type: Object,
+      default: () => {}
     }
   },
   setup (props) {
     const {
       model,
-      fromItemConfig
+      fromItemConfig,
+      inline,
+      rules
     } = props
-    const onSubmit = () => {
-      console.log('submit!')
+
+    const ruleFormRef = ref<FormInstance>()
+
+    const onSubmit = async (formEl: FormInstance | undefined) => {
+      if (!formEl) { return }
+      await formEl.validate((valid, fields) => {
+        if (valid) {
+          console.log('submit!')
+        } else {
+          console.log('error submit!', fields)
+        }
+      })
     }
+
+    const resetForm = (formEl: FormInstance | undefined) => {
+      if (!formEl) { return }
+      formEl.resetFields()
+    }
+
     const renderElFormItem = (item: typeFormItem<keyof typeof model>) => {
       switch (item.type) {
         case ItemTypeEnum.Input:
@@ -50,10 +77,10 @@ export default defineComponent({
     }
     return () => (
       <div>
-        <ElForm inline={true} model={model} scroll-into-view-options={true}>
+        <ElForm ref={ruleFormRef} rules={rules} inline={inline} model={model} scroll-into-view-options={true}>
           {
             fromItemConfig.map((item: typeFormItem<keyof typeof model>) => (
-              <ElFormItem label={item.label} key={item.key}>
+              <ElFormItem label={item.label} key={item.key} prop={item.key}>
                 {
                   renderElFormItem(item)
                 }
@@ -61,8 +88,8 @@ export default defineComponent({
             ))
           }
           <ElFormItem>
-            <ElButton onClick={ () => onSubmit() }>重置</ElButton>
-            <ElButton type="primary" onClick={ () => onSubmit() }>查询</ElButton>
+            <ElButton onClick={ () => resetForm(ruleFormRef.value) }>重置</ElButton>
+            <ElButton type="primary" onClick={ () => onSubmit(ruleFormRef.value) }>查询</ElButton>
           </ElFormItem>
         </ElForm>
       </div>

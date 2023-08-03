@@ -15,6 +15,23 @@ export default defineComponent({
       goodsStatus: ''
     })
 
+    const rules = {
+      goodsName: [
+        { required: true, message: '请输入商品名称', trigger: ['blur', 'change'] }
+      ],
+      goodsCode: [
+        { required: true, message: '请输入商品货号', trigger: ['blur', 'change'] }
+      ],
+      goodsType: [
+        { required: true, message: '请选择商品分类', trigger: ['blur', 'change'] }
+      ],
+      goodsBrand: [
+        { required: true, message: '请选择商品品牌', trigger: ['blur', 'change'] }
+      ],
+      goodsStatus: [
+        { required: true, message: '请选择上架状态', trigger: ['blur', 'change'] }
+      ]
+    }
     const fromItemConfig: typeFormItem<keyof typeof model>[] = [
       {
         label: '商品名称',
@@ -71,6 +88,7 @@ export default defineComponent({
       <div class="p-16px">
         <Form
           model={model}
+          rules={rules}
           fromItemConfig={fromItemConfig}
         />
         <ElCard>
