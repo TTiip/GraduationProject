@@ -20,6 +20,14 @@ export default defineComponent({
     rules: {
       type: Object,
       default: () => {}
+    },
+    labelWidth: {
+      type: String,
+      default: '100px'
+    },
+    optionText: {
+      type: String,
+      default: '下一步，填写促销信息'
     }
   },
   setup (props) {
@@ -27,7 +35,9 @@ export default defineComponent({
       model,
       fromItemConfig,
       inline,
-      rules
+      rules,
+      labelWidth,
+      optionText
     } = props
 
     const ruleFormRef = ref<FormInstance>()
@@ -77,7 +87,7 @@ export default defineComponent({
     }
     return () => (
       <div>
-        <ElForm ref={ruleFormRef} rules={rules} inline={inline} model={model} scroll-into-view-options={true}>
+        <ElForm label-width={labelWidth} ref={ruleFormRef} rules={rules} inline={inline} model={model} scroll-into-view-options={true}>
           {
             fromItemConfig.map((item: typeFormItem<keyof typeof model>) => (
               <ElFormItem label={item.label} key={item.key} prop={item.key}>
@@ -88,8 +98,23 @@ export default defineComponent({
             ))
           }
           <ElFormItem>
-            <ElButton onClick={ () => resetForm(ruleFormRef.value) }>重置</ElButton>
-            <ElButton type="primary" onClick={ () => onSubmit(ruleFormRef.value) }>查询</ElButton>
+            {
+              optionText
+                ? (
+                  <>
+                    <ElButton type="primary" onClick={ () => onSubmit(ruleFormRef.value) }>{optionText}</ElButton>
+                  </>
+                )
+                : (
+                  <>
+                    <div>
+                      <ElButton onClick={ () => resetForm(ruleFormRef.value) }>重置</ElButton>
+                      <ElButton type="primary" onClick={ () => onSubmit(ruleFormRef.value) }>查询</ElButton>
+                    </div>
+                  </>
+                )
+            }
+
           </ElFormItem>
         </ElForm>
       </div>
