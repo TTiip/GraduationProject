@@ -12,9 +12,13 @@ export default defineComponent({
       type: Array,
       requred: true
     },
+    total: {
+      type: Number,
+      default: () => 400
+    }
   },
   setup (props) {
-    const { data, columnList } = props
+    const { data, columnList, total } = props
     const currentPage4 = 1
     const pageSize4 = 15
 
@@ -41,7 +45,7 @@ export default defineComponent({
             v-model:page-size={pageSize4}
             page-sizes={[15, 20, 30, 50]}
             layout="total, sizes, prev, pager, next, jumper"
-            total={400}
+            total={total}
           />
         </div>
 		  </div>
