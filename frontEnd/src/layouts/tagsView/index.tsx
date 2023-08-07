@@ -121,7 +121,7 @@ export default defineComponent({
                         tags.value[index] = val
                       }
                     }}
-                    onClick={ () => tagItemClick(item) }
+                    onClick={ () => !isActive(item) ? tagItemClick(item) : () => {} }
                     key={ item?.fullPath }
                     onContextmenu={ withModifiers(() => {
                       selectedTag.value = tags.value[index]
