@@ -45,6 +45,7 @@ export default defineComponent({
         <Table
           data={data}
           columnList={columnList}
+          total={10}
         />
       </div>
     )
