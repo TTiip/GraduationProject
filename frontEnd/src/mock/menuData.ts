@@ -73,18 +73,6 @@ const data: MenuItemType[] = [
         name: '角色列表',
         icon: '',
         children: []
-      },
-      {
-        path: '/user3',
-        name: '菜单列表',
-        icon: '',
-        children: []
-      },
-      {
-        path: '/user4',
-        name: '资源列表',
-        icon: '',
-        children: []
       }
     ]
   }

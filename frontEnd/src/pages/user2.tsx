@@ -6,7 +6,7 @@ export default defineComponent({
         redirect: /
         component: ~/layouts
         meta:
-          title: 解说列表
+          title: 角色列表
           showId: true
       </route>
     )
