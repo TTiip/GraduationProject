@@ -1,4 +1,4 @@
-import { ElCard, ElIcon } from 'element-plus'
+import { ElButton, ElCard, ElIcon } from 'element-plus'
 import Form from '~/components/from'
 import Table from '~/components/table'
 import { columnList, data } from '~/pages/goods1/data'
@@ -92,11 +92,16 @@ export default defineComponent({
           fromItemConfig={fromItemConfig}
         />
         <ElCard>
-          <div class="flex items-center">
-            <ElIcon style="font-size: 24px">
-              <i class="i-iconoir-task-list"></i>
-            </ElIcon>
-            <span class="ml-4px">数据列表</span>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <ElIcon style="font-size: 24px">
+                <i class="i-iconoir-task-list"></i>
+              </ElIcon>
+              <span class="ml-4px">数据列表</span>
+            </div>
+            <div>
+              <ElButton type="primary">添加</ElButton>
+            </div>
           </div>
         </ElCard>
         <Table

@@ -132,6 +132,7 @@ export default defineComponent({
             rules={rules}
             inline={false}
             fromItemConfig={fromItemConfig}
+            optionText="下一步，填写促销信息"
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { ElButton, ElForm, ElFormItem, ElInput, ElOption, ElSelect } from 'element-plus'
+import { ElButton, ElDatePicker, ElForm, ElFormItem, ElInput, ElOption, ElSelect } from 'element-plus'
 import type { FormInstance } from 'element-plus'
 import { ItemTypeEnum, type typeFormItem } from '~/types/form'
 
@@ -26,8 +26,7 @@ export default defineComponent({
       default: '100px'
     },
     optionText: {
-      type: String,
-      default: '下一步，填写促销信息'
+      type: String
     }
   },
   setup (props) {
@@ -80,6 +79,14 @@ export default defineComponent({
                 ))
               }
             </ElSelect>
+          )
+        case ItemTypeEnum.DatePicker:
+          return (
+            <ElDatePicker
+              v-model={model[item.key]}
+              type="date"
+              {...item.attrs}
+            />
           )
         default:
           return '默认位置'
