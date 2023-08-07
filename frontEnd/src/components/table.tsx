@@ -17,7 +17,8 @@ export default defineComponent({
       default: () => 400
     }
   },
-  setup (props) {
+  emits: ['edit'],
+  setup (props, { emit }) {
     const { data, columnList, total } = props
     const currentPage4 = 1
     const pageSize4 = 15
@@ -35,7 +36,7 @@ export default defineComponent({
 		        ))
 		      }
 		      <ElTableColumn label="操作" width="180" align="center">
-		        <ElButton type="primary">编辑</ElButton>
+		        <ElButton type="primary" onClick={() => emit('edit', data![0])}>编辑</ElButton>
 		        <ElButton type="danger">删除</ElButton>
 		      </ElTableColumn>
 		    </ElTable>
