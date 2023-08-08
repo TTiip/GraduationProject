@@ -44,11 +44,11 @@ export default defineComponent({
             <div class="flex items-center gap-3">
               <img src="../../public/logo.png" class="h-15 select-none" />
               <div>
-                <div class="tracking-widest whitespace-nowrap font-extrabold text-4xl text-gray-700 dark:text-gray-100">
-									后台管理系统
+                <div class="tracking-widest whitespace-nowrap font-extrabold text-24px text-gray-700 dark:text-gray-100">
+                  微众银行闲置交易管理系统
                 </div>
                 <p class="text-sm tex-gray-400">
-									Vitesse Background Management System
+                Webank idle transaction management system
                 </p>
               </div>
             </div>
