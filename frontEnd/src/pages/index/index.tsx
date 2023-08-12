@@ -1,5 +1,7 @@
 import { ElCard } from 'element-plus'
 import EchartsComponent from '~/components/echarts'
+import MonthPicker from '~/components/MonthPicker.vue'
+import MonthPicker1 from '~/components/MonthPicker1.vue'
 
 export default defineComponent({
   name: 'index',
@@ -96,8 +98,17 @@ export default defineComponent({
         compare: -19
       }
     ]
+
+    const data = ref([])
     return () => (
       <div class="p-20px">
+        {console.log(data.value, 'data.value')}
+        MonthPicker: <MonthPicker class="w-400px" v-model={data.value} />
+        <br />
+        MonthPicker1: <MonthPicker1 class="w-400px" v-model={data.value} />
+        <br />
+        <br />
+        <br />
         <div class="flex">
           {
             tabsList.map(item => (
