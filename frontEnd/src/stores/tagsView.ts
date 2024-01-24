@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import type { RouteLocationRaw } from 'vue-router'
 
 const useTagsViewStore = defineStore('tagsView', () => {
@@ -16,7 +18,7 @@ const useTagsViewStore = defineStore('tagsView', () => {
       return router.resolve({
         ...e.location,
         name: 'all',
-        params: { all: e.location.path.split('/').filter(Boolean) }
+        params: { all: e.location.path.split('/').filter(Boolean) },
       })
     }
   }
@@ -105,10 +107,10 @@ const useTagsViewStore = defineStore('tagsView', () => {
     pushRoute,
     deleteView,
     back,
-    addView
+    addView,
   }
 })
 
 export {
-  useTagsViewStore
+  useTagsViewStore,
 }

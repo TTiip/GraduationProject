@@ -1,13 +1,15 @@
-import { withModifiers } from 'vue'
+import { computed, defineComponent, nextTick, onMounted, ref, shallowRef, watch, withModifiers } from 'vue'
 import type { RouteLocation } from 'vue-router'
 import type { SortableEvent } from 'sortablejs'
 import { ElPopover } from 'element-plus'
 import Sortable from 'sortablejs'
+import { useRoute, useRouter } from 'vue-router'
 import ScrollPane from '~/layouts/tagsView/scrollPane'
+import { getTagsViewInstance } from '~/composables/pinia'
 import './index.css'
 
 export default defineComponent({
-  name: 'tags-view',
+  name: 'TagsView',
   setup () {
     const route = useRoute()
     const router = useRouter()
@@ -42,13 +44,13 @@ export default defineComponent({
       }
     }
 
-    const isActive = $computed(() =>
+    const isActive = computed(() =>
       (tag: RouteLocation) => tag.path === route.path)
 
     const closeTag = (view = route) => {
       show.value = false
       tagsViewInstance.deleteView(view)
-      if (isActive(view)) {
+      if (isActive.value(view)) {
         toLastView()
       }
     }
@@ -99,7 +101,7 @@ export default defineComponent({
               // console.log(arr, 'arr')
               // tagsViewInstance.visitedViews = arr
             }
-          }
+          },
         })
     })
 
@@ -121,18 +123,18 @@ export default defineComponent({
                         tags.value[index] = val
                       }
                     }}
-                    onClick={ () => !isActive(item) ? tagItemClick(item) : () => {} }
+                    onClick={ () => !isActive.value(item) ? tagItemClick(item) : () => {} }
                     key={ item?.fullPath }
                     onContextmenu={ withModifiers(() => {
                       selectedTag.value = tags.value[index]
                       show.value = true
                     }, ['prevent']) }
                   >
-                    <div class={ `z-9 h-24px shrink-0 tab-item ${isActive(item) ? 'active' : ''}` }>
+                    <div class={ `z-9 h-24px shrink-0 tab-item ${isActive.value(item) ? 'active' : ''}` }>
                       <span class="split absolute left-[-6px] z-[-1] text-gray-400">｜</span>
-                      <div v-show={ isActive(item) } class="absolute left-3 h-2 w-2 rounded-full mr-1.5 bg-[var(--el-color-primary)]" />
+                      <div v-show={ isActive.value(item) } class="absolute left-3 h-2 w-2 rounded-full mr-1.5 bg-[var(--el-color-primary)]" />
                       <div class="px-6px">{ item?.meta?.title }</div>
-                      <span class={`${!isActive(item) ? 'opacity-0' : ''} icon-close text-xs flex items-center hover:bg-gray-300 rounded-full duration-300`}>
+                      <span class={`${!isActive.value(item) ? 'opacity-0' : ''} icon-close text-xs flex items-center hover:bg-gray-300 rounded-full duration-300`}>
                         {
                           tagsViewInstance.visitedViews.length !== 1
                             ? <i onClick={ withModifiers(() => closeTag(item), ['stop']) } class="i-iconoir-cancel" />
@@ -176,6 +178,6 @@ export default defineComponent({
         </div>
       )
     }
-  }
+  },
 })
 

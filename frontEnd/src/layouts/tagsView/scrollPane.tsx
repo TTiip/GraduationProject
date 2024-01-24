@@ -1,15 +1,15 @@
 import type { PropType } from 'vue'
-import { withModifiers } from 'vue'
+import { computed, defineComponent, shallowRef, useAttrs, withModifiers } from 'vue'
 import type { RouteLocation } from 'vue-router'
 import { ElScrollbar } from 'element-plus'
 
 export default defineComponent({
-  name: 'scroll-pane',
+  name: 'ScrollPane',
   props: {
     tagList: {
       type: Array as PropType<any[]>,
-      default: () => ([])
-    }
+      default: () => ([]),
+    },
   },
   setup (props, ctx) {
     const attrs = useAttrs()
@@ -59,7 +59,7 @@ export default defineComponent({
     }
 
     ctx.expose({
-      moveToTarget
+      moveToTarget,
     })
 
     return () => (
@@ -72,5 +72,5 @@ export default defineComponent({
         { ctx.slots?.default ? ctx.slots?.default() : null }
       </ElScrollbar>
     )
-  }
+  },
 })

@@ -1,11 +1,15 @@
-import { TransitionGroup, withModifiers } from 'vue'
+import { TransitionGroup, computed, defineComponent, withModifiers } from 'vue'
 import { ElBreadcrumb, ElBreadcrumbItem, ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus'
+import { useVModel } from '@vueuse/core'
+import { useRoute, useRouter } from 'vue-router'
 import ChooseTheme from '~/layouts/navigation/choose-theme'
+import { getTagsViewInstance } from '~/composables/pinia'
+import { isFullscreen, toggleFullscreen } from '~/composables/full-screen'
 
 import './index.css'
 
 export default defineComponent({
-  name: 'navigation',
+  name: 'Navigation',
   props: ['isCollapse'],
   setup (props, { emit }) {
     const user: any = {}
@@ -53,7 +57,7 @@ export default defineComponent({
                     </ElDropdownItem>
                   </ElDropdownMenu>
                 </>
-              )
+              ),
             }}
           >
             欢迎您, admin
@@ -61,5 +65,5 @@ export default defineComponent({
         </nav>
       )
     }
-  }
+  },
 })

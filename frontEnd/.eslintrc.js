@@ -1,13 +1,11 @@
 module.exports = {
   extends: ['@antfu'],
   rules: {
-    // 关闭tab和空格混用 eslint 校验
-    'no-mixed-spaces-and-tabs': 'off',
-    // 强制组件名使用 index-component 这种，兼容缓存逻辑(为了偷懒～)
-    'vue/component-definition-name-casing': [2, 'kebab-case'],
-    // 关闭函数一定要写返回值
+    // 用export暴露模块内容时，不应暴露可更改的数据
+    'import/no-mutable-exports': 'off',
+    // 强制数组方法的回调函数中有 return 语句
     'array-callback-return': 'off',
-    // 关闭 防止使用未知的DOM属性(目前就是解决 class 报错 需要强制使用 className)
+    // tsx jsx中标签使用className替代class
     'react/no-unknown-property': 'off',
     // JSX、TSX 函数组件必须需要函数名 (可以在JSX、TSX中使用 'name' 属性定义组件名)
     'react/display-name': 'off',
@@ -18,7 +16,7 @@ module.exports = {
     // 强制使用 两个字符 缩进
     'indent': ['error', 2, {
       // switch case 开头的缩进 1 * 2
-      SwitchCase: 1
+      SwitchCase: 1,
     }],
     // 函数参数 不使用换行
     'function-paren-newline': ['error', 'never'],
@@ -65,12 +63,21 @@ module.exports = {
     // 禁止使用特定的语法
     'no-restricted-syntax': 'off',
     // typescript 关闭逗号检测
-    '@typescript-eslint/comma-dangle': ['error', 'never'],
+    '@typescript-eslint/comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
+      },
+    ],
     // 关闭缩进检测
     '@typescript-eslint/indent': 'off',
     // {} 括号和 else 换行风格。
     '@typescript-eslint/brace-style': ['error', '1tbs', {
-      allowSingleLine: true
+      allowSingleLine: true,
     }],
     // script标签缩进设置
     'vue/script-indent': ['error', 2, {
@@ -79,42 +86,42 @@ module.exports = {
       // switch 缩进 1 * 2
       switchCase: 1,
       // 忽略的节点
-      ignores: []
+      ignores: [],
     }],
     // 逗号前面不要空格，后面必须空格
     'comma-spacing': [
       'error',
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     // 末尾逗号使用规则配置
     'comma-dangle': [
       'error',
       {
-        arrays: 'never',
-        objects: 'never',
-        imports: 'never',
-        exports: 'never',
-        functions: 'never'
-      }
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
+      },
     ],
     // vue 文件 按照特定的顺序 排列 template script style
     'vue/component-tags-order': [
       'error',
       {
-        order: ['template', 'script', 'style']
-      }
-    ]
+        order: ['template', 'script', 'style'],
+      },
+    ],
   },
   overrides: [
     {
       files: ['*.vue'],
       // 关闭 vue 文件中的缩进检测
       rules: {
-        indent: 'off'
-      }
-    }
-  ]
+        indent: 'off',
+      },
+    },
+  ],
 }

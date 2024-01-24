@@ -1,14 +1,13 @@
+import { defineComponent } from 'vue'
+
 export default defineComponent({
-  name: 'index',
+  name: 'Index',
   setup () {
-    return (
-      <route lang="yaml">
-        redirect: /
-        component: ~/layouts
-        meta:
-          title: 仪表盘
-          showId: true
-      </route>
+    return () => (
+      <div>
+        <i class="i-iconoir:home flex text-60px color-#ff6700"></i>
+				Index
+      </div>
     )
-  }
+  },
 })

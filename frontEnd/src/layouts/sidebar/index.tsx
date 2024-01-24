@@ -1,23 +1,24 @@
 import { ElIcon, ElMenu, ElMenuItem, ElSubMenu } from 'element-plus'
 import type { PropType } from 'vue'
+import { defineComponent, useAttrs } from 'vue'
 import type { MenuItemType } from '~/types'
 import './index.css'
 
 export default defineComponent({
-  name: 'side-bar',
+  name: 'SideBar',
   props: {
     menuData: {
       type: Array as PropType<MenuItemType[]>,
-      require: true
+      require: true,
     },
     defaultActive: {
       type: String,
-      required: true
+      required: true,
     },
     router: {
       type: Boolean,
-      default: () => true
-    }
+      default: () => true,
+    },
   },
   setup (props) {
     const menuAttrs = useAttrs()
@@ -33,7 +34,7 @@ export default defineComponent({
                 </ElIcon>
                 <span>{item.name}</span>
               </>
-            )
+            ),
           }
 
           if (item.children && item.children.length) {
@@ -74,5 +75,5 @@ export default defineComponent({
         </ElMenu>
       )
     }
-  }
+  },
 })

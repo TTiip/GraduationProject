@@ -5,7 +5,7 @@ const data: MenuItemType[] = [
     path: '/',
     name: '仪表盘',
     icon: 'i-iconoir:home',
-    children: []
+    children: [],
   },
   {
     path: '/goods',
@@ -16,27 +16,27 @@ const data: MenuItemType[] = [
         path: '/goods1',
         name: '商品列表',
         icon: '',
-        children: []
+        children: [],
       },
       {
         path: '/goods2',
         name: '添加商品',
         icon: '',
-        children: []
+        children: [],
       },
       {
         path: '/goods3',
         name: '商品分类',
         icon: '',
-        children: []
+        children: [],
       },
       {
         path: '/goods4',
         name: '商品类型',
         icon: '',
-        children: []
-      }
-    ]
+        children: [],
+      },
+    ],
   },
   {
     path: '/order',
@@ -47,15 +47,15 @@ const data: MenuItemType[] = [
         path: '/order1',
         name: '订单列表',
         icon: '',
-        children: []
+        children: [],
       },
       {
         path: '/order2',
         name: '订单设置',
         icon: '',
-        children: []
-      }
-    ]
+        children: [],
+      },
+    ],
   },
   {
     path: '/user',
@@ -66,16 +66,16 @@ const data: MenuItemType[] = [
         path: '/user1',
         name: '用户列表',
         icon: '',
-        children: []
+        children: [],
       },
       {
         path: '/user2',
         name: '角色列表',
         icon: '',
-        children: []
-      }
-    ]
-  }
+        children: [],
+      },
+    ],
+  },
 ]
 
 export default data

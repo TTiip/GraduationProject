@@ -1,15 +1,17 @@
-import { KeepAlive, Transition } from 'vue'
+import { KeepAlive, Transition, defineComponent, shallowRef } from 'vue'
 import { ElAside, ElMain } from 'element-plus'
 import type { RouteRecordRaw } from 'vue-router'
+import { useRoute } from 'vue-router'
 import menuData from '~/mock/menuData'
 import Sidebar from '~/layouts/sidebar/index'
 import Navigation from '~/layouts/navigation/index'
 import TagsView from '~/layouts/tagsView/index'
+import { getTagsViewInstance } from '~/composables/pinia'
 
 export default defineComponent({
-  name: 'layouts',
+  name: 'Layouts',
   setup () {
-    const isCollapse = ref(false)
+    const isCollapse = shallowRef(false)
     const route = useRoute()
     const tagsViewInstance = getTagsViewInstance()
 
@@ -20,7 +22,7 @@ export default defineComponent({
             <img class="w-8 mx-1" src="../../public/logo.png" />
             <div class="relative overflow-hidden">
               <Transition enter-active-class="absolute" duration={ 300 } leave-active-class="absolute">
-                <h1 v-show={ !isCollapse.value } class="ml-1 text-primary center text-gray-700 dark:text-gray-200">微众银行闲置交易管理系统</h1>
+                <h1 v-show={ !isCollapse.value } class="ml-1 text-primary center text-gray-700 dark:text-gray-200">闲置交易管理系统</h1>
               </Transition>
             </div>
           </header>
@@ -37,10 +39,10 @@ export default defineComponent({
                   <Component key={ route.path } />
                 </KeepAlive>
               </Transition>
-            )
+            ),
           }} />
         </ElMain>
       </div>
     )
-  }
+  },
 })

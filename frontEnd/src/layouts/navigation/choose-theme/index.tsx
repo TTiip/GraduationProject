@@ -1,7 +1,9 @@
 import { ElPopover } from 'element-plus'
+import { defineComponent, useAttrs, watch } from 'vue'
+import { useCssVar, useLocalStorage } from '@vueuse/core'
 
 export default defineComponent({
-  name: 'choose-theme',
+  name: 'ChooseTheme',
   setup () {
     const attrs = useAttrs()
     const hex2rgb = (hex: string) => {
@@ -24,7 +26,7 @@ export default defineComponent({
       '#6366F1',
       '#67C23A',
       '#E6A23C',
-      '#909399'
+      '#909399',
     ]
 
     return () => (
@@ -36,7 +38,7 @@ export default defineComponent({
               <i
                 class="flex text-18px dark:i-iconoir-half-moon i-iconoir:sun-light"
                 onClick={ () => toggleDark() } />
-            )
+            ),
           }}
         >
           <div class="flex gap-3">
@@ -54,5 +56,5 @@ export default defineComponent({
         </ElPopover>
       </div>
     )
-  }
+  },
 })

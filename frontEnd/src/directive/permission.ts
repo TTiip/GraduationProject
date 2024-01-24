@@ -14,5 +14,5 @@ export default {
     }
 
     el.style.display = 'none'
-  }
+  },
 }

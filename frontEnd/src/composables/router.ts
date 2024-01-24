@@ -30,7 +30,7 @@ export function useRouteQuery<T extends string | string[]> (name: string,
   {
     mode = 'replace',
     route = useRoute(),
-    router = useRouter()
+    router = useRouter(),
   }: ReactiveRouteOptions = {}) {
   const routeName = route.name
   const result = computed({
@@ -49,7 +49,7 @@ export function useRouteQuery<T extends string | string[]> (name: string,
       nextTick(() => {
         router[unref(mode)]({ query: { ...route.query, [name]: v === defaultValue || v === null ? undefined : v } })
       })
-    }
+    },
   }) as any
 
   return result

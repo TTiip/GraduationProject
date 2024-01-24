@@ -1,3 +1,5 @@
+import { useTagsViewStore } from '~/stores'
+
 const getTagsViewInstance = () => {
   const tagsViewStore = useTagsViewStore()
 
@@ -6,7 +8,7 @@ const getTagsViewInstance = () => {
     // 添加 matched 防止JSON.stringify 格式化报错
     const coverVisitedViews = JSON.stringify(state.visitedViews.map((item: any) => ({
       ...item,
-      matched: []
+      matched: [],
     })))
     localStorage.setItem('visitedViews', coverVisitedViews)
   })
@@ -22,5 +24,5 @@ const getUserInstance = () => {
 
 export {
   getTagsViewInstance,
-  getUserInstance
+  getUserInstance,
 }
